@@ -1,0 +1,65 @@
+﻿@model WebApplication1.Models.Contact
+@{
+    ViewData["Title"] = "Contact";
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<form asp-controller="Home" asp-action="ContactPost" method="POST">
+
+    <!--Grid row-->
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-6">
+            <div class="md-form mb-0">
+                <input asp-for="Name" class="form-control">
+                @Html.ValidationMessageFor(model => model.Name)
+                <label for="name" class="">Your name</label>
+            </div>
+        </div>
+        <!--Grid column-->
+        <!--Grid column-->
+        <div class="col-md-6">
+            <div class="md-form mb-0">
+                <input asp-for="Email" class="form-control">
+
+            </div>
+        </div>
+        <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+    <!--Grid row-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-form mb-0">
+                <input asp-for="Subject" class="form-control">
+                @Html.ValidationMessageFor(model => model.Subject)
+                <label for="Subject" class="">Subject</label>
+            </div>
+        </div>
+    </div>
+    <!--Grid row-->
+    <!--Grid row-->
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-12">
+
+            <div class="md-form">
+                <textarea asp-for="Message" rows="2" class="form-control md-textarea"></textarea>
+                <label for="message">Your message</label>
+            </div>
+
+        </div>
+        <div class="text-center text-md-left">
+            <button class="btn btn-primary">Send</button>
+        </div>
+    </div>
+    <!--Grid row-->
+
+</form>
+
